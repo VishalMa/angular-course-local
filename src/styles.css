@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+/* Can Move below themes to related component class */
+ app-course-card.is-first {
+    border-top: 2px solid red;
+    padding-top: 20px;
+    margin: 10px;
+ }
+ app-course-card.is-last {
+    border-bottom: 2px solid crimson;
+    padding-top: 20px;
+    margin: 10px;
+  }
+
+  app-course-card.is-even {
+    background: rgb(226, 123, 112);
+    margin: 10px;
+  }
+
+  app-course-card.is-odd {
+    background: lightcyan;
+    margin: 10px;
+  }
+  img{
+    max-height: 150px;
+    width: 300px;
+  }
+  .highlighted {
+    background-color: brown;
+  }
+
+

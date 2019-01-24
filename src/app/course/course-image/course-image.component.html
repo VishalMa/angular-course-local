@@ -1,0 +1,6 @@
+<div>
+  <img [src]="iconURL" *ngIf="iconURL;else blankPage" class="card-img-top" alt="Angular Logo" #srcImage>
+  <ng-template #blankPage>
+<img src="assets/empty-image.png" alt="No Image Found">
+  </ng-template>
+</div>

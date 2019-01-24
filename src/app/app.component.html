@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<!-- <div class="row">
+<app-course-title [course_title]=title [backGroundColor]="'blue'"></app-course-title>
+<app-course-title course_title={{rxJsTitle}} [backGroundColor]="'green'"></app-course-title>
+<app-course-title course_title="{{ngrxTitle}}" [backGroundColor]="'yellow'"></app-course-title>
+</div> -->
+<!-- <div class="row">
+  <app-course-card [course]=angularCourse (selectedCourseClick)="onButtonClick($event)"></app-course-card>
+  <app-course-card [course]=rxJsCourse (selectedCourseClick)="onButtonClick($event)"></app-course-card>
+  <app-course-card [course]=ngrxCourse (selectedCourseClick)="onButtonClick($event)"></app-course-card>
+</div> -->
+<!-- Name : <input type="text" name="SayHello" id="hh" [appHighlighted]="false">
+<div class="row"> -->
+<!-- Use of ngContentChild, children , ngViewChild,children -->
+    <!-- <app-course-card appHighlighted *ngFor="let course of courses;index as i,first as isFirst, even as isEven;
+    odd as isOdd" [courseIndex]="i+1"
+    [class.is-first]="isFirst"
+    [class.is-odd]="isOdd"
+    [class.is-even]="isEven"
+     [course]="course" (selectedCourseClick)="onButtonClick($event)">
+    <app-course-image [courseIconURL]="course?.iconUrl"></app-course-image>
+    Hello
+     </app-course-card>
+  </div> -->
+
+  <ng-template [ngIf]="courses[0]" let-course>
+  <div class="row salmon-theme" #container>
+
+  <!-- <app-course-card appHighlighted (onToggle)="catchOnToggleFromDirective($event)" #publishDirective="D1"
+   [course]="course" (selectedCourseClick)="onButtonClick($event)" #cardRef1>
+
+   <app-course-image [courseIconURL]="course.iconUrl" *appNgxUnless="course.iconUrl" (dblclick)="publishDirective.toggle()">
+   </app-course-image>
+
+  </app-course-card> -->
+
+  <app-course-card (onToggle)="catchOnToggleFromDirective($event)"
+  [course]="course" (selectedCourseClick)="onButtonClick($event)" #cardRef1>
+
+  <app-course-image [courseIconURL]="course.iconUrl" *appNgxUnless="course.iconUrl" >
+  </app-course-image>
+  <div class="course-description">
+  {{course?.longDescription}}
+  </div>
+ </app-course-card>
+   <!-- <app-course-card
+   [course]="courses[1]" (selectedCourseClick)="onButtonClick($event)" #cardRef2></app-course-card> -->
+
+  </div>
+</ng-template>
+<router-outlet></router-outlet>
+

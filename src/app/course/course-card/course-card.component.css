@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+/*  Below ng-deep is used to By pass view Encapsulation. Here we are applying the css
+to the Host element.
+*/
+::ng-deep .course-description{
+  color: chartreuse;
+  font-family: cursive;
+}
+
+/* Sometimes it's useful to apply styles based on some condition outside of a component's view */
+:host-context(.salmon-theme){
+  background-color: salmon;
+}
+/* Here, CSS will be directly appllied on the Host Element, not on the Element Template */
+:host {
+  display: block;
+  border: 1px solid yellowgreen;
+}
+

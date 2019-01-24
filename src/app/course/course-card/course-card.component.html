@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem;margin: 10px;">
+    <ng-content select="app-course-image"></ng-content>
+    <div class="card-body">
+    <h3 class="card-title">{{courseIndex}} {{course?.description}}</h3>
+    <ng-content></ng-content>
+    <!-- <p class="card-text">{{course?.longDescription}}</p> -->
+    <div [ngSwitch]="course?.category">
+        <div style="padding-bottom:10px" *ngSwitchCase="'BEGINNER'"><span class="badge badge-success">Beginner {{course?.lessonsCount}}</span></div>
+        <div style="padding-bottom:10px" *ngSwitchCase="'INTERMEDIATE'"><span class="badge badge-warning">Intermidiate {{course?.lessonsCount}}</span></div>
+        <div style="padding-bottom:10px" *ngSwitchDefault><span class="badge badge-info">All Lessons</span></div>
+    </div>
+    <button class="btn btn-primary" (click)="onSelectedCourseClick()">View Sourse</button>
+
+    </div>
+</div>
